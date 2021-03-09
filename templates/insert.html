@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+
+{% block child_block %}
+
+<div class="container" align="center">
+    <h3>Please Provide The Information</h3>
+    <form method="POST">
+        {{form.as_p}}
+        {%csrf_token%}
+        <input type="submit" value="Insert record" class="btn btn-primary btn-lg">
+
+    </form>
+    <br>
+    <a href="/show" class="btn btn-primary btn-lg">show detailes</a>
+</div>
+{% endblock%}

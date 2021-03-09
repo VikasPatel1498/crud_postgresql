@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block child_block %}
+
+<div class="container" align="center">
+    <h2>Information Of Students</h2>
+    <table border="1">
+        <thead class="thead-dark">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Marks</th>
+                <th>Address</th>
+                <th>Action</th>
+               
+            </tr>
+        </thead>
+        {% for student in students %}
+        <tr>
+            <td>{{student.No}}</td>
+            <td>{{student.Name}}</td>
+            <td>{{student.Marks}}</td>
+            <td>{{student.Address}}</td>
+            <td><a href="/delete/{{student.id}}" >Delete</a><a href="/update/{{student.id}}" >Update</a></td>
+        </tr>
+        {% endfor%}
+    </table>
+
+</div>
+{% endblock %}
